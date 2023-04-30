@@ -8,14 +8,16 @@ services:
       dockerfile: Dockerfile
     command: gunicorn gamma.wsgi:application --bind 0.0.0.0:8000
     ports:
-      - 8000:8000
+      - "8000:8000"
 
   nginx:
     build:
       context: ./nginx
       dockerfile: Dockerfile
+
+    # port_inside_container:port_outside_container
     ports:
-      - 80:8000
+      - "80:80"
     depends_on:
       - web
 

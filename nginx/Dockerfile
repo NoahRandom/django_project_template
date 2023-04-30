@@ -1,7 +1,5 @@
 FROM nginx:1.21-alpine
 
-RUN echo "starting nginx Dockerfile config"
-
 # removes from the container the nginx default config file
 RUN rm /etc/nginx/conf.d/default.conf
 
